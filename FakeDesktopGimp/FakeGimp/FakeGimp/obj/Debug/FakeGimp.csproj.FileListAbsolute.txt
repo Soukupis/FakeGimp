@@ -1,0 +1,16 @@
+C:\Users\josephsoukup\Desktop\Wpf\FakeGimp\FakeGimp\obj\Debug\FakeGimp.csprojAssemblyReference.cache
+C:\Users\josephsoukup\Desktop\Wpf\FakeGimp\FakeGimp\obj\Debug\App.g.cs
+C:\Users\josephsoukup\Desktop\Wpf\FakeGimp\FakeGimp\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\josephsoukup\Desktop\Wpf\FakeGimp\FakeGimp\obj\Debug\FakeGimp_MarkupCompile.cache
+C:\Users\josephsoukup\Desktop\Wpf\FakeGimp\FakeGimp\obj\Debug\FakeGimp_MarkupCompile.lref
+C:\Users\josephsoukup\Desktop\Wpf\FakeGimp\FakeGimp\bin\Debug\FakeGimp.exe.config
+C:\Users\josephsoukup\Desktop\Wpf\FakeGimp\FakeGimp\bin\Debug\FakeGimp.exe
+C:\Users\josephsoukup\Desktop\Wpf\FakeGimp\FakeGimp\bin\Debug\FakeGimp.pdb
+C:\Users\josephsoukup\Desktop\Wpf\FakeGimp\FakeGimp\obj\Debug\FakeGimp.g.resources
+C:\Users\josephsoukup\Desktop\Wpf\FakeGimp\FakeGimp\obj\Debug\FakeGimp.Properties.Resources.resources
+C:\Users\josephsoukup\Desktop\Wpf\FakeGimp\FakeGimp\obj\Debug\FakeGimp.csproj.GenerateResource.cache
+C:\Users\josephsoukup\Desktop\Wpf\FakeGimp\FakeGimp\obj\Debug\FakeGimp.csproj.CoreCompileInputs.cache
+C:\Users\josephsoukup\Desktop\Wpf\FakeGimp\FakeGimp\obj\Debug\FakeGimp.exe
+C:\Users\josephsoukup\Desktop\Wpf\FakeGimp\FakeGimp\obj\Debug\FakeGimp.pdb
+C:\Users\josephsoukup\Desktop\Wpf\FakeGimp\FakeGimp\obj\Debug\MainWindow.g.cs
+C:\Users\josephsoukup\Desktop\Wpf\FakeGimp\FakeGimp\obj\Debug\MainWindow.baml
