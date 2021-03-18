@@ -15,6 +15,7 @@ namespace FakeGimp.ViewModel
     class MainViewModel : INotifyPropertyChanged
     {
         private BitmapImage image;
+        private BitmapImage original_image;
         public BitmapImage Image
         {
             get => image;
@@ -23,13 +24,23 @@ namespace FakeGimp.ViewModel
                 image = value; NotifyPropertyChanged();
             }
         }
+        public BitmapImage OriginImage
+        {
+            get => original_image;
+            set
+            {
+                original_image = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         private Filters filters { get; set; }
         public Command LoadImage { get; set; }
         public Command GrayScale { get; set; }
-        public Command OdstinyCervene { get; set; }
-        public Command OdstinyZelene { get; set; }
-        public Command OdstinyModre { get; set; }
+        public Command RedScale { get; set; }
+        public Command GreenScale { get; set; }
+        public Command BlueScale { get; set; }
+        public Command Reset { get; set; }
         
         
         public MainViewModel()
@@ -43,15 +54,15 @@ namespace FakeGimp.ViewModel
                 () => { Image = filters.GrayScale(Image); },
                 () => { return true; }
             );
-            OdstinyCervene = new Command(
+            RedScale = new Command(
                 () => { Image = filters.Shades(0, Image); },
                 () => { return true; }
             );
-            OdstinyZelene = new Command(
+            GreenScale = new Command(
                 () => { Image = filters.Shades(1, Image); },
                 () => { return true; }
             );
-            OdstinyModre = new Command(
+            BlueScale = new Command(
                 () => { Image = filters.Shades(2, Image); },
                 () => { return true; }
             );

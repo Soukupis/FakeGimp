@@ -44,9 +44,9 @@
         <Button Background="LightGray" Grid.Column="0" Grid.Row="3" Content="Zesílení červené" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
         <Button Background="LightGray" Grid.Column="0" Grid.Row="4" Content="Zesílení zelené" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
         <Button Background="LightGray" Grid.Column="0" Grid.Row="5" Content="Zesílení modré" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-        <Button Background="LightGray" Grid.Column="0" Grid.Row="6" Content="odstíny červené" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding OdstinyCervene}"/>
-        <Button Background="LightGray" Grid.Column="0" Grid.Row="7" Content="odstíny zelené" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding OdstinyZelene}"/>
-        <Button Background="LightGray" Grid.Column="0" Grid.Row="8" Content="odstíny modré" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding OdstinyModre}"/>
+        <Button Background="LightGray" Grid.Column="0" Grid.Row="6" Content="odstíny červené" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding RedScale}"/>
+        <Button Background="LightGray" Grid.Column="0" Grid.Row="7" Content="odstíny zelené" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding GreenScale}"/>
+        <Button Background="LightGray" Grid.Column="0" Grid.Row="8" Content="odstíny modré" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding BlueScale}"/>
         <Button Background="LightGray" Grid.Column="0" Grid.Row="9" Content="odstíny šedé" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding GrayScale}" />
         <Button Background="LightGray" Grid.Column="0" Grid.Row="10" Content="Sépie" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <Button Background="LightGray" Grid.Column="0" Grid.Row="11" Content="Negativ" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
