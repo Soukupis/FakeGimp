@@ -14,15 +14,6 @@ namespace FakeGimp.Model
         public BitmapImage image { get; set; }
         private BitmapImage original_image;
         private int[,] array;
-        private int width, height;
-        /*
-        public void ChangImage(BitmapImage image)
-        {
-            image = this.image = image;
-            width = image.PixelWidth;
-            height = image.PixelHeight;
-        }
-        */
 
         public BitmapImage GrayScale(BitmapImage image)
         {
@@ -45,6 +36,33 @@ namespace FakeGimp.Model
             }
             return null;
         }
+        public BitmapImage BlurSerial(BitmapImage image)
+        {
+            int blurAmmount = 3;
+            if (image != null)
+            {
+                array = BitmapImageToArray2D(image);
+                for (int x = blurAmmount; x < image.PixelHeight-1- blurAmmount; x++)
+                {
+                    for (int y = blurAmmount; y < image.PixelWidth-1- blurAmmount; y++)
+                    {
+                        int prevX = array[x - blurAmmount, y];
+                        int nextX = array[x + blurAmmount, y];
+                        int nextY = array[x, y+ blurAmmount];
+                        int prevY = array[x, y - blurAmmount];
+                        
+                        int avgRed = ((((prevX & 0x00FF0000) >> 16) + ((nextX & 0x00FF0000) >> 16) + ((prevY & 0x00FF0000) >> 16) + ((nextY & 0x00FF0000) >> 16))/4);
+                        int avgGreen = ((((prevX & 0x0000FF00) >> 8) + ((nextX & 0x0000FF00) >> 8) + ((prevY & 0x0000FF00) >> 8) + ((nextY & 0x0000FF00) >> 8))/4);
+                        int avgBlue = ((prevX & 0x000000FF) + (nextX & 0x000000FF) + (prevY & 0x000000FF) + (nextY & 0x000000FF))/4;
+                        array[x, y] = (int)((array[x, y] & 0xFF000000) + (avgRed << 16) + (avgGreen << 8) + (avgBlue));
+                        
+
+                    }
+                }
+                return ConvertWriteableBitmapToBitmapImage(Array2DToWriteableBitmap(array, image));
+            }
+            return null;
+        }
         public BitmapImage Shades(int channel, BitmapImage image)
         {
             if (image != null)
@@ -58,6 +76,7 @@ namespace FakeGimp.Model
                     case 0: maska = 0xFFFF0000; break;
                     case 1: maska = 0xFF00FF00; break;
                     case 2: maska = 0xFF0000FF; break;
+                    case 3: maska = 0xFFFF00FF; break;
                 }
                 for (int x = 0; x < image.PixelHeight; x++)
                 {

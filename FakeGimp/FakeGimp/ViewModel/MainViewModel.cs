@@ -40,6 +40,8 @@ namespace FakeGimp.ViewModel
         public Command RedScale { get; set; }
         public Command GreenScale { get; set; }
         public Command BlueScale { get; set; }
+        public Command PinkScale { get; set; }
+        public Command BlurSerial { get; set; }
         public Command Reset { get; set; }
         
         
@@ -66,9 +68,16 @@ namespace FakeGimp.ViewModel
                 () => { Image = filters.Shades(2, Image); },
                 () => { return true; }
             );
+            PinkScale = new Command(
+                () => { Image = filters.Shades(3, Image); },
+                () => { return true; }
+            );
+            BlurSerial = new Command(
+               () => { Image = filters.BlurSerial(Image); },
+               () => { return true; }
+           );
 
         }
-
         public async void LoadImageExecute()
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -81,7 +90,6 @@ namespace FakeGimp.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
         public event PropertyChangedEventHandler PropertyChanged;
 
     }

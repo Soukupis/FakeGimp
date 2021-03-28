@@ -30,6 +30,7 @@
             <RowDefinition Height="22"/>
             <RowDefinition Height="22"/>
             <RowDefinition Height="22"/>
+            <RowDefinition Height="22"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -48,15 +49,16 @@
         <Button Background="LightGray" Grid.Column="0" Grid.Row="7" Content="odstíny zelené" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding GreenScale}"/>
         <Button Background="LightGray" Grid.Column="0" Grid.Row="8" Content="odstíny modré" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding BlueScale}"/>
         <Button Background="LightGray" Grid.Column="0" Grid.Row="9" Content="odstíny šedé" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding GrayScale}" />
-        <Button Background="LightGray" Grid.Column="0" Grid.Row="10" Content="Sépie" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        <Button Background="LightGray" Grid.Column="0" Grid.Row="11" Content="Negativ" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        <Button Background="LightGray" Grid.Column="0" Grid.Row="12" Content="Redukce o 1/2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-        <Button Background="LightGray" Grid.Column="0" Grid.Row="13" Content="Redukce o 1/4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-        <Button Background="LightGray" Grid.Column="0" Grid.Row="14" Content="Redukce o 1/8" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-        <TextBox Grid.Column="0" Grid.Row="15"  Text="16" TextWrapping="Wrap" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        <Button Background="LightGray" Grid.Column="0" Grid.Row="16" Content="Rozostření" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        <Button Background="LightGray" Grid.Column="0" Grid.Row="17" Content="Vrátit změny" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-        <Rectangle Fill="LightGray" Grid.Column="0" Grid.Row="18"/>
+        <Button Background="LightGray" Grid.Column="0" Grid.Row="10" Content="odstíny růžové" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding PinkScale}" />
+        <Button Background="LightGray" Grid.Column="0" Grid.Row="11" Content="Sépie" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Button Background="LightGray" Grid.Column="0" Grid.Row="12" Content="Negativ" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Button Background="LightGray" Grid.Column="0" Grid.Row="13" Content="Redukce o 1/2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+        <Button Background="LightGray" Grid.Column="0" Grid.Row="14" Content="Redukce o 1/4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+        <Button Background="LightGray" Grid.Column="0" Grid.Row="15" Content="Redukce o 1/8" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+        <TextBox Grid.Column="0" Grid.Row="16"  Text="16" TextWrapping="Wrap" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Button Background="LightGray" Grid.Column="0" Grid.Row="17" Content="Rozostření" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding BlurSerial}"/>
+        <Button Background="LightGray" Grid.Column="0" Grid.Row="18" Content="Vrátit změny" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+        <Rectangle Fill="LightGray" Grid.Column="0" Grid.Row="19"/>
 
         <Image Grid.Column="2" Grid.RowSpan="16" Grid.Row="2" Source="{Binding Image}"/>
     </Grid>
