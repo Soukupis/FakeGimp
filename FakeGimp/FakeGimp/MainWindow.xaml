@@ -56,7 +56,7 @@
         <Button Background="LightGray" Grid.Column="0" Grid.Row="14" Content="Redukce o 1/4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
         <Button Background="LightGray" Grid.Column="0" Grid.Row="15" Content="Redukce o 1/8" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
         <TextBox Grid.Column="0" Grid.Row="16"  Text="16" TextWrapping="Wrap" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        <Button Background="LightGray" Grid.Column="0" Grid.Row="17" Content="Rozostření" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding BlurSerial}"/>
+        <Button Background="LightGray" Grid.Column="0" Grid.Row="17" Content="Rozostření" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding BlurParallel}"/>
         <Button Background="LightGray" Grid.Column="0" Grid.Row="18" Content="Vrátit změny" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
         <Rectangle Fill="LightGray" Grid.Column="0" Grid.Row="19"/>
 

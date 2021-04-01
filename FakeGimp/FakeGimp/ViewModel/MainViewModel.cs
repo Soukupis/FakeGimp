@@ -7,8 +7,10 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Threading;
 
 namespace FakeGimp.ViewModel
 {
@@ -16,6 +18,7 @@ namespace FakeGimp.ViewModel
     {
         private BitmapImage image;
         private BitmapImage original_image;
+        private Dispatcher _dispatcher = Dispatcher.CurrentDispatcher;
         public BitmapImage Image
         {
             get => image;
@@ -42,9 +45,10 @@ namespace FakeGimp.ViewModel
         public Command BlueScale { get; set; }
         public Command PinkScale { get; set; }
         public Command BlurSerial { get; set; }
+        public Command BlurParallel { get; set; }
         public Command Reset { get; set; }
         
-        
+
         public MainViewModel()
         {
             filters = new Filters();
@@ -75,8 +79,12 @@ namespace FakeGimp.ViewModel
             BlurSerial = new Command(
                () => { Image = filters.BlurSerial(Image); },
                () => { return true; }
+               );
+             BlurParallel = new Command(
+               () => { Image = filters.BlurParallel(Image); },
+            
+               () => { return true; }
            );
-
         }
         public async void LoadImageExecute()
         {
