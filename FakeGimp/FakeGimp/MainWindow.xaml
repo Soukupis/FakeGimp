@@ -31,6 +31,7 @@
             <RowDefinition Height="22"/>
             <RowDefinition Height="22"/>
             <RowDefinition Height="22"/>
+            <RowDefinition Height="22"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -56,9 +57,8 @@
         <Button Background="LightGray" Grid.Column="0" Grid.Row="14" Content="Redukce o 1/4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
         <Button Background="LightGray" Grid.Column="0" Grid.Row="15" Content="Redukce o 1/8" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
         <TextBox Grid.Column="0" Grid.Row="16"  Text="16" TextWrapping="Wrap" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        <Button Background="LightGray" Grid.Column="0" Grid.Row="17" Content="Rozostření" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding BlurParallel}"/>
-        <Button Background="LightGray" Grid.Column="0" Grid.Row="18" Content="Vrátit změny" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
-        <Rectangle Fill="LightGray" Grid.Column="0" Grid.Row="19"/>
+        <Button Background="LightGray" Grid.Column="0" Grid.Row="17" Content="Rozostření (P)" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding BlurParallel}"/>
+        <Button Background="LightGray" Grid.Column="0" Grid.Row="18" Content="Rozostření (S)" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding BlurSerial}"/>
 
         <Image Grid.Column="2" Grid.RowSpan="16" Grid.Row="2" Source="{Binding Image}"/>
     </Grid>

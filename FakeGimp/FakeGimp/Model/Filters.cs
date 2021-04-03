@@ -67,28 +67,27 @@ namespace FakeGimp.Model
         }
         public BitmapImage BlurParallel(BitmapImage image)
         {
-            
             int[,] array = BitmapImageToArray2D(image);
             int[] row = new int[Convert.ToInt32(image.Width - 1 - blurAmmount)];
+           
             Thread[] threads = new Thread[Environment.ProcessorCount];
-            for(int j = 0; j < Environment.ProcessorCount; j++)
+        
+            for(int j = 0; j < Environment.ProcessorCount; ++j)
             {
-                
-            threads[j] = new Thread(() =>
+                int temp = j;
+                threads[temp] = new Thread(()=>
                 {
                     Application.Current.Dispatcher.Invoke(() =>
                     {
-                        int start =j * Convert.ToInt32((image.Height / Environment.ProcessorCount) -blurAmmount-1)-1;
-                        int end = (1+ j) * Convert.ToInt32((image.Height / Environment.ProcessorCount) -blurAmmount-1)-1;
-                        for (int i = blurAmmount + start; i < end; i++)
+                        int start = temp * Convert.ToInt32((image.Height / Environment.ProcessorCount)) + blurAmmount;
+                        int end = (1+ temp) * Convert.ToInt32((image.Height / Environment.ProcessorCount)) - blurAmmount - 1;
+                        for (int i = start; i < end; i++)
                         {
-                            row = BlurAlgorithm(array, i, Convert.ToInt32(image.Width - 1 - blurAmmount));
-                            Thread.Sleep(10);
+                            row = BlurAlgorithm(array, i, Convert.ToInt32(image.Width - blurAmmount-1));
                             for (int x = blurAmmount; x < image.Width - 1 - blurAmmount; x++)
                             {
                                 array[i, x - blurAmmount] = row[x - blurAmmount];
                             }
-                           
                         }
                     });
                 });
@@ -97,12 +96,9 @@ namespace FakeGimp.Model
             {
                 t.Start();
             }
-            foreach(var t in threads)
-            {
-                t.Join();
-            }
             return ConvertWriteableBitmapToBitmapImage(Array2DToWriteableBitmap(array, image));
         }
+
         public int[] BlurAlgorithm(int[,] array, long rowNumber, int rowWidth)
         {
             int[] rowArray = new int[rowWidth];
